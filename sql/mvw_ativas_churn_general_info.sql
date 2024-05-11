@@ -1,5 +1,4 @@
-CREATE MATERIALIZED VIEW public.mvw_ativas_churn_general_info
-TABLESPACE pg_default
+CREATE MATERIALIZED VIEW public.mvw_ativas_churn_general_info AS
 AS SELECT base_escolas_geral.cliente,
     base_escolas_geral.data_inauguracao,
     base_escolas_geral.alunos_ativos,
