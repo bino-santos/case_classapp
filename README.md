@@ -17,6 +17,7 @@ from oscar_scraper import scrape_oscar_data
 base_url = 'http://oscars.yipitdata.com/' 
 df = scrape_oscar_data(base_url)
 ```
+<sub>disclaimer: The step above may take a few minutes depending on the machine/cluster you are running it on. The functions are not optimized for performance.</sub> \
 \
 &nbsp;&nbsp;&nbsp;&nbsp;3.2.1. File **oscar_cleaner.py** holds the functions *clean_budget(value, country)* and *clean_year(year)* \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example: 
