@@ -1,18 +1,33 @@
-# Oscar Data Scraper and Cleaner
+# Oscar Data Scraper and Cleaner - EXPLAIN file
 
 This project scrapes Oscar data, cleans it, and exports it to a CSV file.
 
-## Steps to install and use it
+## Approach and assumptions 
 
-### 1. **Install Python** (version 3.6 or later). 
-### 2. **Install dependencies:** 
-   2.1. The non-native libraries needed are *pandas* and *requests*. They are on the requirements.txt file. User can Install them with \
-   `pip install -r requirements.txt` 
-   or one by one 
-   ```
-pip install pandas
-pip install requests
-```
+### 1. **Libraries**
+   1.1 The only libraries used were \
+   \
+   **requests**: to fetch the data from the endpoint. \
+   **pandas**: to simplify data manipulatation in a dataframe format. \
+   **re**: to manage regular expressions and make it easy to format and manipulate strings. \
+   \
+   These are well known, good and reliable libraries that can do the job with minimized effort.
+### 2. **Functions** 
+   2.1. The first function in the pipeline is the **scrape_oscar_date(base_url)**, in the *oscar_scraper.py* file. \
+   \
+   This function sends a request to the base_url and gets the data present in the endpoint. \
+   The json data is formated with the .json() method and each layer is iterated to get all the columns we need. \
+   The columns are: film, year, wikipedia_url, oscar_winner, original_budget and country. \
+   The original budget comes from another endpoint present in the details of each movie, so the code has to iterate yet again inside each one to fetch this column. \
+   This process makes the code slow, but ensures to get every film and budget in the endpoint. \
+   \
+   2.2 The next function is **clean_year(year)**, in the *oscar_cleaner.py* file. \
+   \
+   This function uses a regular expressiona to get a patter of exactly 4 digits out of the year string. \
+   The assumption here is that any 4 digit patter present in the year index is the data we're looking for. \
+   The columns are: film, year, wikipedia_url, oscar_winner, original_budget and country. \
+   The original budget comes from another endpoint present in the details of each movie, so the code has to iterate yet again inside each one to fetch this column. \
+   This process makes the code slow, but ensures to get every film and budget in the endpoint. \
 ### 3. **Usage** 
    3.1. Each python file contains useful functions to scrape, clean and export the oscar data. \
 &nbsp;&nbsp;&nbsp;&nbsp;3.1.1. File **oscar_scraper.py** holds the function *scrape_oscar_data(base_url)* \
