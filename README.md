@@ -30,7 +30,7 @@ df = scrape_oscar_data(base_url)
 ```
 from oscar_cleaner import clean_budget, clean_year 
 df['year'] = df['year'].apply(clean_year) 
-df['cleaned_budget'] = df.apply(lambda row: clean_budget(row['original_budget'], row['country']), axis=1) 
+df['cleaned_budget_in_usd'] = df.apply(lambda row: clean_budget(row['original_budget'], row['country']), axis=1) 
 ```
 \
 In the example above a new column was created so that the original budget column is still in the final dataframe
