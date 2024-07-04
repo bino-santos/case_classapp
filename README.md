@@ -6,8 +6,13 @@ This project scrapes Oscar data, cleans it, and exports it to a CSV file.
 
 ### 1. **Install Python** (version 3.6 or later). 
 ### 2. **Install dependencies:** 
-   2.1. The libraries needed are on the requirements.txt file. User can Install them with "pip install -r requirements.txt" or one by one \
-   2.1. The libraries are *pandas* and *requests*. 
+   2.1. The non-native libraries needed are *pandas* and *requests*. They are on the requirements.txt file. User can Install them with \
+   `pip install -r requirements.txt` 
+   or one by one 
+   ```
+pip install pandas
+pip install requests
+```
 ### 3. **Usage** 
    3.1. Each python file contains useful functions to scrape, clean and export the oscar data. \
 &nbsp;&nbsp;&nbsp;&nbsp;3.1.1. File **oscar_scraper.py** holds the function *scrape_oscar_data(base_url)* \
